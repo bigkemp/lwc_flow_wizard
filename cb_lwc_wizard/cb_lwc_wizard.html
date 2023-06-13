@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : Pelleg Maimon
+  @group             : 
+  @last modified on  : 06-13-2023
+  @last modified by  : Pelleg Maimon
+-->
+<template>
+    <lightning-card title={title}>
+        <p class="slds-p-horizontal_small">
+            <slot onslotchange={handleSlotChange} class="screens_container"></slot>
+            <lightning-spinner if:true={loading} alternative-text="Loading"></lightning-spinner>
+        </p>
+        <p slot="footer" style="text-align: start;" >   
+            <lightning-button name="back" label="Cancel" title="Non-primary action" onclick={handleClick} class=" slds-m-left_x-small"></lightning-button>
+            <lightning-button name="next" disabled={disablenext} variant="brand" label="Next" title="Primary action" onclick={handleClick} class="slds-float_right slds-m-left_x-small"></lightning-button>
+        </p>
+    </lightning-card>
+</template>
